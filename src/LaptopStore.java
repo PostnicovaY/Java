@@ -84,11 +84,13 @@ public class LaptopStore {
         Map<Integer, Object> filters = new HashMap<>();
         if (criterion == 2 || criterion == 3) {
             System.out.print("Введите минимальное значение: ");
+            Object value = scanner.nextInt();
+            filters.put(criterion, value);
         } else {
             System.out.print("Введите критерий: ");
+            Object value = scanner.next();
+            filters.put(criterion, value);
         }
-        Object value = scanner.next();
-        filters.put(criterion, value);
 
         // Filter laptops based on criteria
         Set<Laptop> filteredLaptops = laptopStore.filterLaptops(filters);
